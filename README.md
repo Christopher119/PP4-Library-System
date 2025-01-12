@@ -148,6 +148,20 @@ In order to deploy the site:<br>
 
 The live link can be found here - Placeholder
 
+# Database Creation
+
+This site will use a PostgreSQL database.<br>
+In order to create and link the database:<br>
+
+1. I used the CodeInstitute PostgreSQL tool.<br>
+2. I created an env.py file and ensured it was listed in the .gitignore file.<br>
+3. In env.py I imported python's os module.<br>
+4. I set the value of DATABASE_URL to the url provided by CodeInstitute.<br>
+5. I installed the required packages to connect my database and added them to requirements.txt<br>
+6. I imported these packages and the env.py file into settings.py<br>
+7. I replaced the existing sqlite3 database connections with my created database connection.<br>
+8. I then created database tables using the migrate command.<br>
+
 # Credits
 
 ## Content
