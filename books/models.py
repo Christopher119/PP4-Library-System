@@ -13,15 +13,15 @@ class Book(models.Model):
     # url style for name of book
     slug = models.SlugField(max_length=200, unique=True)
     # author of book
-    author = models.SlugField(max_length=200, unique=True)
+    author = models.CharField(max_length=200, unique=True)
     # genre of book
-    genre = models.SlugField(max_length=200, unique=True)
+    genre = models.CharField(max_length=200, unique=True)
     # blurb for the book
-    blurb = models.SlugField(max_length=200, unique=True)
+    blurb = models.CharField(max_length=200, unique=True)
     # description of the book
-    description = models.SlugField(max_length=200, unique=True)
+    description = models.TextField(max_length=200, unique=True)
     # number available for check out
-    copies_available = models.SlugField(max_length=200, unique=True)
+    copies_available = models.IntegerField()
 
     # attribute to set books as available by default
     status = models.IntegerField(choices=STATUS, default=1)
