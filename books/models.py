@@ -89,4 +89,4 @@ class Request(models.Model):
 
     # Method to display Book objects as user friendly string
     def __str__(self):
-        return f"Request for: Title: {self.book.title} Author: {self.book_author} | By: {self.requester}"
+        return f"Request for: Title: {self.book_title} | Author: {self.book_author} | By: {self.requester}"
