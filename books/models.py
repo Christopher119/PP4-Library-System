@@ -80,7 +80,7 @@ class Request(models.Model):
     book_author = models.CharField()
     book_title = models.CharField()
     #allowing optional request reasons
-    request_content = models.CharField(blank=True)
+    request_content = models.TextField(blank=True)
 
 
     # metadata that sorts entries by requester

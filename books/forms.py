@@ -11,4 +11,4 @@ class ReviewForm(forms.ModelForm):
 class RequestForm(forms.ModelForm):
     class Meta:
         model = Request
-        fields = ('request_content',)
+        fields = ('book_author', 'book_author', 'request_content',)
