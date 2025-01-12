@@ -40,6 +40,9 @@ The site should display approved reviews to users.
 In order to fulfill the users wants from the Strategy plane and the plans from the Scope plane I created a flowchart to understand how site flow.<br>
 ![Image of a flowchart for the site](README-Images/PP4-FlowChart.png)
 
+I also created a Entity-Relationship Diagram to get a better idea of what I would need to construct to make the site function as required.<br>
+![Image of an ERD for the site](README-Images/PP4-ERD.png)
+
 ### Main Scripts
 
 
