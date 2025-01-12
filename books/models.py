@@ -13,13 +13,13 @@ class Book(models.Model):
     # url style for name of book
     slug = models.SlugField(max_length=200, unique=True)
     # author of book
-    author = models.CharField(max_length=200, unique=True)
+    author = models.CharField(max_length=200)
     # genre of book
-    genre = models.CharField(max_length=200, unique=True)
+    genre = models.CharField(max_length=200)
     # blurb for the book
     blurb = models.CharField(max_length=200, unique=True)
     # description of the book
-    description = models.TextField(max_length=200, unique=True)
+    description = models.TextField(unique=True)
     # number available for check out
     copies_available = models.IntegerField()
 
