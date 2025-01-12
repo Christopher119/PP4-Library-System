@@ -31,6 +31,46 @@
             </div>
         </div>
     </div>
+    <!-- Displaying count of reviews -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="far fa-comments"></i> {{ review_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+    <!-- Displaying reviews -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Reviews:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags
+                to iterate through each review in reviews -->
+                {% for review in reviews %}
+                <div class="p-2 reviews
+                    {% if not review.approved and review.reader == user %}
+                    faded{% elif not review.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ review.reader }}
+                        wrote:
+                    </p>
+                    <div id="review{{ review.id }}">
+                        {{ review.review_content | linebreaks }}
+                    </div>
+                    {% if not review.approved and review.author == user %}
+                    <p class="approval">
+                        This review is awaiting approval
+                    </p>
+                    {% endif %}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
