@@ -137,7 +137,14 @@ Placeholder.<br>
 This app will be deployed through Heroku by being linked to the Github repository.<br>
 In order to deploy the site:<br>
 
-1. Placeholder.<br>
+1. I created the app in the Heroku Dashboard.<br>
+2. I modified the Config Vars of the app to restrict the collection of static data.<br>
+3. I installed gunicorn.<br>
+4. I created a procfile to instruct heroku on which file to run.<br>
+5. I added heroku as an allowed host in settings.py.<br>
+6. I disabled DEBUG.<br>
+7. I linked the heroku app to my GitHub repo.<br>
+8. I clicked Deploy Branch.<br>
 
 The live link can be found here - Placeholder
 
