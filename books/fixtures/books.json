@@ -1,0 +1,212 @@
+[
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Night Lords: Blood Reaver",
+            "slug": "night-lords-blood-reaver",
+            "author": "Aaron Dembski-Bowden",
+            "genre": "Sciende Fiction",
+            "blurb": "The Night Lords stalk the shadows of the galaxy.",
+            "description": "Driven on by their hatred of the False Emperor, the Night Lords stalk the shadows of the galaxy, eternally seeking revenge for the death of their primarch. Their dark quest leads them to a fractious alliance with the Red Corsairs, united only by a common enemy. Together with this piratical band of renegades, they bring their ways of destruction to the fortress-monastery of the Marines Errant.",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Night Lords: Soul Hunter",
+            "slug": "night-lords-soul-hunter",
+            "author": "Aaron Dembski-Bowden",
+            "genre": "Sciende Fiction",
+            "blurb": "Fear these Space Marines.",
+            "description": "Betrayed, cast from the Emperor's light and hunted as heretics, they are the rebels of the 41st millennium. Garbed in symbols of death, the Night Lords are remorseless hunters and killers. They will never repent for the blasphemies that saw them banished. They prey upon the dying Imperium, bringing death from the darkness between worlds. AND TERROR IS THEIR MOST POWERFUL WEAPON",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Night Lords: Void Stalker",
+            "slug": "night-lords-void-stalker",
+            "author": "Aaron Dembski-Bowden",
+            "genre": "Sciende Fiction",
+            "blurb": "The hunters have become the hunted.",
+            "description": "The hunters have become the hunted. The Night Lords flee to the dark fringes of the Imperium to escape their relentless pursuers – the eldar of Craftworld Ulthwé. Their flight takes them to the carrion world of Tsagualsa, where their primarch died and their Legion was broken. There, history will repeat itself as a deadly assassin stalks the shadows, and the Night Lords are drawn into a battle they are destined to lose.",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Crusade For Armageddon",
+            "slug": "crusade-for-armageddon",
+            "author": "Jonathan Green",
+            "genre": "Science Fiction",
+            "blurb": "Battle-weary Marshal Brant of the Black Templars returns home.",
+            "description": "Battle-weary Marshal Brant of the Black Templars returns home after leading his Space Marines to victory through countless campaigns to find their planet, Solemnus, under attack from battle hungry orks. After a desperate struggle, Brant finds his forces are all but destroyed and the honour of the Chapter stained with blood. His vow for revenge takes him to the fiery shores of Armageddon, a sulphurous world synonymous with war, and into the heat of battle! ",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Conquest of Armageddon",
+            "slug": "conquest-of-armageddon",
+            "author": "Jonathan Green",
+            "genre": "Science Fiction",
+            "blurb": "The Black Templars Space Marines head to the battle-ravaged planet of Armageddon.",
+            "description": "The Black Templars Space Marines head to the battle-ravaged planet of Armageddon, determined to find one of their fighting companies that has gone missing there. Unbeknownst to Marshal Brant and his Black Templars, a squad of Armageddon Ork Hunters is also at large in the ork-infested jungles, searching for a high-ranking Imperial oficcer, lost when his flyer crashed. What the would-be rescuers don't know is that there are other things stirring in the jungles. The savage Orks of the Blood Scar tribe hunt them through the dense undergrowth, whilst something dark, ancient and terrible prepares to stretch its murderous hand forth once more.",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Dark Imperium",
+            "slug": "dark-imperium",
+            "author": "Guy Haley",
+            "genre": "Science Fiction",
+            "blurb": "Fell times have come to the galaxy.",
+            "description": "Cadia has fallen, destroyed by the onslaught of Chaos. A Great Rift in the warp has opened and from its depths spew daemons and the horrors of Old Night. But all hope is not lost... A hero, long absent, has returned and with him comes the wrath of the Ultramarines reborn. Roboute Guilliman has arisen to lead the Imperium out of darkness on a crusade the likes of which has not been seen since the fabled days of the Emperor. But never before have the forces of Ruin amassed in such numbers, and nowhere is safe from despoliation. From the dreaded Scourge Stars come the hordes of the Plaguefather, Lord Nurgle, and their pustulent eye is fixed on Macragge. As the Indomitus Crusade draws to an end, Guilliman races to Ultramar and a confrontation with the Death Guard. ",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Dark Imperium: Plague War",
+            "slug": "dark-imperium-plague-war",
+            "author": "Guy Haley",
+            "genre": "Science Fiction",
+            "blurb": "In the void and upon the worlds of Greater Ultramar, the battle for the Imperium continues.",
+            "description": "Intent on rebuilding his home realm and using it as base to reconstruct the ravaged stellar empire of mankind, the returned primarch Roboute Guilliman proceeds with his war to drive Mortarion and his Death Guard Traitor Legion from the domain of the Ultramarines. But when Guilliman brings his brother to battle upon the diseased plains of Parmenio, the intervention of a greater power in their fraternal struggle threatens to upend the Imperial Regent’s understanding of the galaxy, and his place within it. Primarchs and ideologies clash in this second, thrilling part of the Dark Imperium trilogy.",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Dark Imperium: Godblight",
+            "slug": "dark-imperium-godblight",
+            "author": "Guy Haley",
+            "genre": "Science Fiction",
+            "blurb": "The path of Roboute Guilliman and his fallen brother Mortarion bring them inexorably together on Iax.",
+            "description": "Once a jewel of the Imperium, the garden world of Iax is dying, as the plans of Mortarion to use it as a fulcrum to drag all the stellar realm of Ultramar into the warp come to deadly fruition. While Guilliman attempts to prevent the destruction of his kingdom, Mortarion schemes to bring his brother low with the Godblight, a disease created in the cauldron of Nurgle itself, made with the power to destroy a son of the Emperor. Primarchs clash on the ravaged landscapes of Iax. The gods go to war, and the wider galaxy balances on a knife edge of destruction. As something powerful stirs in the sea of souls, only one thing is certain — whoever wins the last great clash of the Plague War, the repercussions of victory will echo down eternity...",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Fabius Bile: Primogenitor",
+            "slug": "fabius-bile-primogenitor",
+            "author": "Josh Reynolds",
+            "genre": "Science Fiction",
+            "blurb": "He is known by many names — Clonelord, Manflayer, Primogenitor.",
+            "description": "Fabius Bile is the epitome of deceit and perversion, and feared by man and monster alike. Once the Chief Apothecary of the Emperor's Children, the madman known as Fabius Bile possesses a knowledge of genetic manipulation second to none. Now a renegade among renegades, he is loathed by those he once called brother, and even the most degraded of Chaos Space Marines fear his name. Exiled for his dark experiments, Bile has retreated deep into the Eye of Terror, leaving a trail of twisted abominations in his wake. But when a former student brings word of the ultimate prize for the taking, Bile is unable to resist being drawn once more into the cauldron of war. For in seizing this prize, Fabius Bile might yet discover the one secret his has been unable to unlock... the secret which will prevent his inevitable doom.[",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Fabius Bile: Clonelord",
+            "slug": "fabius-bile-clonelord",
+            "author": "Josh Reynolds",
+            "genre": "Science Fiction",
+            "blurb": "Once a loyal son of the Emperor’s Children, Fabius Bile now loathes those he once called brother.",
+            "description": "Fabius Bile now loathes those he once called brother. But when a former comrade requests his aid on a mission he cannot refuse, Bile is drawn once more into the sinister machinations of his former Legion. Now, accompanied by new allies and old enemies alike, Fabius Bile must travel deep into the wilds of the Eastern Fringe, in search of a world unlike any other. A world which might hold the key to his very survival. A world called Solemnace. ",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Fabius Bile: Manflayer",
+            "slug": "fabius-bile-manflayer",
+            "author": "Josh Reynolds",
+            "genre": "Science Fiction",
+            "blurb": "The former Apothecary’s past return to haunt him.",
+            "description": "Fabius Bile: Manflayer sees the former Apothecary’s past return to haunt him even as his grand plan – to create a new breed of human – comes to fruition. The dread haemonculi of the Thirteen Scars coven once tutored Fabius in the arts of torture and flesh-shaping, and now they’re coming for him to stop him from passing on what he’s learned. Fabius must turn to allies old and new if he is to survive and bring his Homo novus into the galaxy. This novel will show you how Fabius copes when pushed to the very limits of his endurance, and how his plots and schemes have far-reaching effects. It also highlights just how devoted he is to his grand plan – and what he’s willing to sacrifice to achieve it.",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Horus Heresy: Crusade's End",
+            "slug": "horus-heresy-crusades-end",
+            "author": "Various",
+            "genre": "Science Fiction",
+            "blurb": "It was to be the dawn of a glorious new age.",
+            "description": "Following countless millennia of darkness and strife, the armies of the Emperor of Mankind had reconquered world after world in a Great Crusade, the like of which the galaxy had never seen. Having established themselves as the most powerful military force ever to march under a single banner, the Space Marine Legions were each led by a god-like primarch – those apparently immortal sons of the Emperor himself. Humanity seemed set to rule the stars once more. And then came Horus. The noble Warmaster, and reviled arch-traitor.",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Horus Heresy: The Last Phoenix",
+            "slug": "horus-heresy-the-last-phoenix",
+            "author": "Various",
+            "genre": "Science Fiction",
+            "blurb": "Only in perfection can evil flourish.",
+            "description": " With the Space Marine Legions falling upon one another in open battle, the most flawed of the mighty primarchs began to pursue their own agendas, seeking out whatever destinies they imagined for themselves under Horus's new order. Fulgrim, the Phoenician lord of the Emperor's Children, had always striven to outshine his brothers - but even he could never have guessed the depths of betrayal to which he would eventually sink in pursuit of greater power. In strength, there is weakness. In beauty, horror. ",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Horus Heresy: The Razing of Prospero",
+            "slug": "horus-heresy-the-razing-of-prospero",
+            "author": "Various",
+            "genre": "Science Fiction",
+            "blurb": "Not all of the primarchs were created equal.",
+            "description": "Long persecuted for his Legion's sorcerous ways, Magnus the Red nevertheless considered himself among the most loyal of the Emperor's Sons. It was he who first learned of Horus's corruption, but in trying to warn his father he earned the wrath of Leman Russ - primarch of the Space Wolves and self-styled Imperial executioner. Word of the subsequent attack on Prospero blurred the lines between ally and enemy, friend and foe, throughout the Legions. Seeking only unity, the Imperium engineered its own downfall. ",
+            "copies_available": 10,
+            "status": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": null,
+        "fields": {
+            "title": "Indomitus ",
+            "slug": "indomitus ",
+            "author": "Gav Thorpe",
+            "genre": "Warhammer",
+            "blurb": "For nearly ten years, the Indomitus Crusade has waged a war of defiance and reconquest in the war-torn Imperium.",
+            "description": "Attached to Crusade Fleet Quintus—dubbed the Cursed Fleet by many—the Ultramarines of the Ithraca's Vengeance are drawn to a stricken world. With millions enslaved, a malign necron technology siphons the souls of the innocent and heralds the Silent Kingdom's expansion. The Ultramarines face an impossible decision: mount a desperate last stand to destroy the Pariah Nexus, or break away and damn the entire sector to bring word of this ancient foe’s resurgence to the only being capable of halting it—the Lord Primarch Roboute Guilliman.",
+            "copies_available": 10,
+            "status": 1
+        }
+    }
+]
