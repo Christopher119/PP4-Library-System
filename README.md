@@ -190,6 +190,19 @@ In order to allow Heroku to serve static files without relying on CDN:
 6. I delete the DISABLE_COLLECTSTATIC Config Vars I created for the initial deployment.
 7. Heroku now runs collectstatic on each deployment.
 
+# Allowing User Authentication
+
+In order to allow users to register and login to the site:
+
+1. I installed the django-allauth package and added it to requirements.txt.
+2. I listed it in settings.txt under INSTALLED_APPS
+3. I listed the site id as one as django can handle multiple and requires a specification.
+4. I listed the login and logout redirects to point to the home page.
+5. I listed the allauth middleware in settings MIDDLEWARE section.
+8. I decided against adding email verification as a library may not require it.
+9. I migrated the changes.
+10. I included an "accounts" url path in the urls.py file.
+
 
 # Credits
 
