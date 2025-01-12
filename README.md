@@ -178,6 +178,18 @@ In order to add Models to the database:
 1. I imported the model to the admin.py file.<br>
 1. I registered the model in the admin.py file.<br>
 
+# Serving Static Files
+
+In order to allow Heroku to serve static files without relying on CDN:
+
+1. I install the whitenoise package and add to requirements.txt.
+2. I authorise the whitenoise packagae by adding it to the settings.text MIDDLEWARE.
+3. I add a path to the STATIC_ROOT.
+4. I run a command to collect all static files.
+5. I create a runtime.txt file and add the used python version.
+6. I delete the DISABLE_COLLECTSTATIC Config Vars I created for the initial deployment.
+7. Heroku now runs collectstatic on each deployment.
+
 
 # Credits
 
