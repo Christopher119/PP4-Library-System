@@ -52,7 +52,6 @@ class Review(models.Model):
                                 Book, on_delete=models.CASCADE, 
                                 related_name="reviews"
                                 )
-    # description of the book
     # not unique as some users may leave similar reviews
     review_content = models.TextField()
     # attribute to set review as unavailable by default
@@ -66,3 +65,28 @@ class Review(models.Model):
     # Method to display Book objects as user friendly string
     def __str__(self):
         return f"Review for: {self.reviewed_book.title} | By: {self.reader}"
+
+
+class Request(models.Model):
+    """A Model for each Request in the database."""
+
+    # attribute to get the user who left the review
+    # also deletes all reviews by user when user is deleted
+    requester = models.ForeignKey(
+                                User, on_delete=models.CASCADE, 
+                                related_name="requester"
+                                )
+    # not unique as many users may request
+    book_author = models.CharField()
+    book_title = models.CharField()
+    #allowing optional request reasons
+    request_content = models.CharField(blank=True)
+
+
+    # metadata that sorts entries by requester
+    class Meta:
+        ordering = ["requester"]
+
+    # Method to display Book objects as user friendly string
+    def __str__(self):
+        return f"Request for: Title: {self.book.title} Author: {self.book_author} | By: {self.requester}"
