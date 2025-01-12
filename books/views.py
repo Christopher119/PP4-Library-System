@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Book
 
 # Create your views here.
-def library_books(request):
-    return HttpResponse("Hello, Readers!")
+
+class BookList(generic.ListView):
+    queryset = Post.objects.all()
+    template_name = "book_list.html"
