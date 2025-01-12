@@ -161,6 +161,23 @@ In order to create and link the database:<br>
 6. I imported these packages and the env.py file into settings.py<br>
 7. I replaced the existing sqlite3 database connections with my created database connection.<br>
 8. I then created database tables using the migrate command.<br>
+9. I created a superuser for the site and database.<br>
+10. I deployed the project again.<br>
+11. I added the DATABASE_URL to heroku's Config Vars.
+
+# Model Creation
+
+In order to add Models to the database:
+
+1. I added the codeinstitute and heroku server urls to the CSRF_TRUSTED_ORIGINS<br>
+1. I created the model in the models.py file.<br>
+1. I assigned it's various attributes and values.<br>
+1. I added any required Foreign Keys.<br>
+1. I made migrations to the database table structure.<br>
+1. I migrated the table to the database.<br>
+1. I imported the model to the admin.py file.<br>
+1. I registered the model in the admin.py file.<br>
+
 
 # Credits
 
