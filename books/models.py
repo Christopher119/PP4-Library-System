@@ -9,6 +9,7 @@ APPROVAL = ((0, "Awaiting Moderation"), (1, "Approved"))
 
 class Book(models.Model):
     """A Model for each Book entry in the database."""
+
     # name of book
     title = models.CharField(max_length=200, unique=True)
     # url style for name of book
@@ -27,8 +28,18 @@ class Book(models.Model):
     # attribute to set books as available by default
     status = models.IntegerField(choices=STATUS, default=1)
 
+    # metadata that sorts entries in descending order
+    # by title, by author, and by genre
+    class Meta:
+        ordering = ["title", "author", "genre"]
+
+    # Method to display Book objects as user friendly string
+    def __str__(self):
+        return f"{self.author} | {self.title}"
+
 class Review(models.Model):
     """A Model for each Review in the database."""
+
     # attribute to get the user who left the review
     # also deletes all reviews by user when user is deleted
     reader = models.ForeignKey(
@@ -46,3 +57,12 @@ class Review(models.Model):
     review_content = models.TextField()
     # attribute to set review as unavailable by default
     approved = models.IntegerField(choices=APPROVAL, default=0)
+
+    # metadata that sorts entries in descending order
+    # by title, by author, and by genre
+    class Meta:
+        ordering = ["reader", "reviewed_book"]
+
+    # Method to display Book objects as user friendly string
+    def __str__(self):
+        return f"Review for: {self.reviewed_book.title} | By: {self.reader}"
