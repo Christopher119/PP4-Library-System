@@ -7,7 +7,7 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>Coder's Library</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
@@ -44,7 +44,11 @@
                         <a class="nav-link {% if request.path == books_url %}active{% endif %}" aria-current="page"
                             href="#">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == books_url %}
+                          active{%endif%}" aria-current="page"
+                          href="{% url 'books' %}">Books</a>
+                    </li>
                 </ul>
                 <span class="navbar-text text-muted">
                     adventures of a software developer

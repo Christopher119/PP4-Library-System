@@ -6,8 +6,11 @@ from .models import Book
 
 class BookList(generic.ListView):
     queryset = Book.objects.all()
-    template_name = "books/index.html"
+    template_name = "books/index1.html"
     paginate_by = 6
+
+def home(request): 
+    return render(request, "books/index.html") 
 
 def book_detail(request, slug):
     """
