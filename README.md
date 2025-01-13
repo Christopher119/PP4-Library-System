@@ -93,9 +93,7 @@ These are simple forms to allow users to login or logout of the site.<br>
 ![Images of the Logout form](README-Images/pp4-signout-page.png)
 
 
-
-
-## Features Left to Implement
+# Features Left to Implement
 
 1. Search Functionality.<br>
     Could not figure out how to step through the data provided in the books.html due it using the Class view to display the entries.<br>
@@ -108,7 +106,6 @@ These are simple forms to allow users to login or logout of the site.<br>
     Forgot to add required attributes to the User class provided by the django.auth packages meaning I was unable to effectively add fields to hold any books held by a user.<br>
 
 # Testing
-
 
 |TEST|PROCESS|EXPECTATION|RESULT|
 | -- | -- | -- | -- |
@@ -137,7 +134,7 @@ These are simple forms to allow users to login or logout of the site.<br>
 | Can a user unmark a book for reserve? | Clicking the return button on a book-details page | The book should be removed from user's reserved books | FAILED |
 | Does the reserve button become disabled if there are no available books? | Trying to click the reserve button when the available books is less than 1 | The button should be disabled | SUCCESS |
 
-
+Received sql errors only a few hours before submission time. Was unable to figure out how to proceed. Unable to perform automated testing as a result and had to resort to manual tests.
 
 # Validating
 
