@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Book, Review
-from .forms import ReviewForm
+from .forms import ReviewForm, RequestForm, ReserveForm
 
 # Create your views here.
 
@@ -69,7 +69,6 @@ def book_detail(request, slug):
         "reviews": reviews,
         "review_count": review_count,
         "review_form": review_form,},
-        
     )
 
 def review_edit(request, slug, review_id):
@@ -109,3 +108,45 @@ def review_delete(request, slug, review_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own reviews!')
 
     return HttpResponseRedirect(reverse('book_detail', args=[slug]))
+
+def request_book(request, request_id):
+    """
+    view to request a book
+    """
+
+    if request.method == "POST":
+
+        request = get_object_or_404(Request, pk=request_id)
+        request_form = RequestForm(data=request.POST, instance=request)
+
+        if request_form.is_valid():
+            request = request_form.save(commit=False)
+            request.save()
+            messages.add_message(request, messages.SUCCESS, 'Request Submitted!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Something went wrong!')
+
+    return render(
+        request,
+        "books/index1.html",
+        {"book_title": book_title,
+        "book_author": book_author,
+        "request_content": request_content,
+        "request": request,},
+    )
+
+# def reserve_book(request, slug):
+#     """
+#     view to alter available copies of a book
+#     """
+#     queryset = Book.objects.filter(status=1)
+#     book = get_object_or_404(queryset, slug=slug)
+#     reserve_form = ReserveForm()
+#
+#     if book.available_copies >= 0:
+#         book.available_copies -= 1
+#         messages.add_message(request, messages.SUCCESS, 'Book reserved!')
+#     else:
+#         messages.add_message(request, messages.ERROR, 'Something went wrong!')
+#
+#     return HttpResponseRedirect(reverse('book_detail', args=[slug]))

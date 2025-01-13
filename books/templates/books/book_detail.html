@@ -29,82 +29,89 @@
         </div>
     </div>
 
-    <!-- Reviews Count -->
+    <!-- Reserve Book Button -->
     <div class="row">
         <div class="col-12">
-            <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ review_count }}
-            </strong>
+            <!-- Reserve Book Button -->
+            <!--<form id="reserve-form" method="post">-->
+                <button id="reserve-btn"
+                class="btn btn-warning btn-lg {% if book.copies_available <= 0 %}disabled{% endif %}" 
+                data-copies_available="{{ book.copies_available }}">
+                    Reserve book
+                </button>
+            <!--</form>-->
+            <p>Copies Available: {{ book.copies_available }}</p>
+            <div class="col-12">
+                <hr>
+            </div>
         </div>
-        <div class="col-12">
-            <hr>
-        </div>
-    </div>
 
-    <!-- Reviews Section -->
-    <div class="row">
-        <!-- Displaying Reviews -->
-        <div class="col-md-7 card mb-4 mt-3 review-box">
-            <h3>Reviews:</h3>
-            <div class="card-body">
-                {% for review in reviews %}
-                <div class="p-2 reviews {% if not review.approved and review.reader == user %}faded{% elif not review.approved %} d-none{% endif %}">
-                    <p class="font-weight-bold">{{ review.reader }} wrote:</p>
-                    <div id="review{{ review.id }}">
-                        {{ review.review_content | linebreaks }}
+        <!-- Reviews Section -->
+        <div class="row">
+            <!-- Displaying Reviews -->
+            <div class="col-md-7 card mb-4 mt-3 review-box">
+                <h3>Reviews:</h3>
+                <div class="card-body">
+                    {% for review in reviews %}
+                    <div
+                        class="p-2 reviews {% if not review.approved and review.reader == user %}faded{% elif not review.approved %} d-none{% endif %}">
+                        <p class="font-weight-bold">{{ review.reader }} wrote:</p>
+                        <div id="review{{ review.id }}">
+                            {{ review.review_content | linebreaks }}
+                        </div>
+                        {% if not review.approved and review.reader == user %}
+                        <p class="approval">This review is awaiting approval</p>
+                        {% endif %}
+                        {% if user.is_authenticated and review.reader == user %}
+                        <button class="btn btn-edit" data-review_id="{{ review.id }}">Edit</button>
+                        <button class="btn btn-delete" data-review_id="{{ review.id }}">Delete</button>
+                        {% endif %}
                     </div>
-                    {% if not review.approved and review.reader == user %}
-                    <p class="approval">This review is awaiting approval</p>
-                    {% endif %}
-                    {% if user.is_authenticated and review.reader == user %}
-                    <button class="btn btn-edit" data-review_id="{{ review.id }}">Edit</button>
-                    <button class="btn btn-delete" data-review_id="{{ review.id }}">Delete</button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- New Review Form -->
+            <div class="col-md-4 card mb-4 mt-3 review-box">
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <h3>Leave a review:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form id="reviewForm" method="post" style="margin-top: 1.3em;">
+                        {{ review_form | crispy }}
+                        {% csrf_token %}
+                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% else %}
+                    <p>Log in to leave a review</p>
                     {% endif %}
                 </div>
-                {% endfor %}
-            </div>
-        </div>
-
-        <!-- New Review Form -->
-        <div class="col-md-4 card mb-4 mt-3 review-box">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h3>Leave a review:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form id="reviewForm" method="post" style="margin-top: 1.3em;">
-                    {{ review_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% else %}
-                <p>Log in to leave a review</p>
-                {% endif %}
             </div>
         </div>
     </div>
-</div>
 
-<!-- Delete Confirmation Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete your review? This action cannot be undone.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your review? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-{% endblock content %}
+    {% endblock content %}
 
-{% block extras %}
-<script src="{% static 'js/reviews.js' %}"></script>
-{% endblock %}
+    {% block extras %}
+    <script src="{% static 'js/reviews.js' %}"></script>
+    <script src="{% static 'js/reserve.js' %}"></script>
+    {% endblock %}

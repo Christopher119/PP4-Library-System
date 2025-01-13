@@ -1,5 +1,3 @@
-/** PLACEHOLDER FROM DJANGO BLOG PROJECT */
-
 const editButtons = document.getElementsByClassName("btn-edit");
 const reviewText = document.getElementById("id_review_content");
 const reviewForm = document.getElementById("reviewForm");

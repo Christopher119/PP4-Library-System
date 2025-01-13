@@ -1,16 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <!-- index.html content starts here -->
 <div class="container">
     <!-- Search Bar and Request Book Button -->
     <div class="row justify-content-center mb-4">
+        {% if user.is_authenticated %}
+            <div class="col-md-4 col-lg-6">
+                <button class="d-flex btn btn-primary ms-2" id="btn-request">Request a Book</button>
+            </div>
+        {% endif %}
         <div class="col-md-8 col-lg-6">
-            <form class="d-flex" action="#" method="get">
+            <form class="d-flex align-items-center" action="#" method="get">
                 <input type="text" id="searchbar" name="searchbar" class="form-control" placeholder="Search for books..." />
                 <button type="submit" class="btn btn-primary ms-2"><i class="fa fa-search"></i> Search</button>
             </form>
+            <!--Request button-->
         </div>
     </div>
 
@@ -60,5 +67,31 @@
     </nav>
     {% endif %}
 </div>
+
+<!-- Request Book Modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">What book would you like to request?</h5>
+            </div>
+            <div class="modal-body">
+                <form id="requestForm" method="post" style="margin-top: 1.3em;">
+                    {{ request_form | crispy }}
+                    {% csrf_token %}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="requestConfirm" href="#" class="btn
+                btn-danger">Request</a>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- index.html content ends here -->
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/request.js' %}"></script>
 {% endblock %}
