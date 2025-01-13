@@ -31,7 +31,7 @@
                         <div class="card-body p-4">
                             <div class="image-container mb-3 position-relative">
                                 {% if "placeholder" in book.cover.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top" src="{{ book.cover.url }}" alt="{{ book.title }}" />
                                 {% endif %}
@@ -73,7 +73,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">What book would you like to request?</h5>
+                <h5 class="modal-title" id="requestModalLabel">What book would you like to request?</h5>
             </div>
             <div class="modal-body">
                 <form id="requestForm" method="post" style="margin-top: 1.3em;">
