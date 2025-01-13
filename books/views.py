@@ -9,7 +9,7 @@ from .forms import ReviewForm, RequestForm, ReserveForm
 
 class BookList(generic.ListView):
     queryset = Book.objects.all()
-    template_name = "books/index1.html"
+    template_name = "books/books.html"
     paginate_by = 9
 
 # def book_list(request):
@@ -128,7 +128,7 @@ def request_book(request, request_id):
 
     return render(
         request,
-        "books/index1.html",
+        "books/books.html",
         {"book_title": book_title,
         "book_author": book_author,
         "request_content": request_content,
