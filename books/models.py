@@ -2,11 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# constant to determine whether there are any remaining books to be reserved by users
+# constant to determine whether there are any
+# remaining books to be reserved by users
 STATUS = ((0, "Unavailable"), (1, "Available"))
 APPROVAL = ((0, "Awaiting Moderation"), (1, "Approved"))
 
 # Create your models here.
+
 
 class Book(models.Model):
     """A Model for each Book entry in the database."""
@@ -39,19 +41,20 @@ class Book(models.Model):
     def __str__(self):
         return f"{self.author} | {self.title}"
 
+
 class Review(models.Model):
     """A Model for each Review in the database."""
 
     # attribute to get the user who left the review
     # also deletes all reviews by user when user is deleted
     reader = models.ForeignKey(
-                                User, on_delete=models.CASCADE, 
+                                User, on_delete=models.CASCADE,
                                 related_name="reviewer"
                                 )
     # attribute to get the book the user is reviewing
-    # also deletes all reviews on the book if it is deleted                        
+    # also deletes all reviews on the book if it is deleted
     reviewed_book = models.ForeignKey(
-                                Book, on_delete=models.CASCADE, 
+                                Book, on_delete=models.CASCADE,
                                 related_name="reviews"
                                 )
     # not unique as some users may leave similar reviews
@@ -75,15 +78,14 @@ class Request(models.Model):
     # attribute to get the user who left the review
     # also deletes all reviews by user when user is deleted
     requester = models.ForeignKey(
-                                User, on_delete=models.CASCADE, 
+                                User, on_delete=models.CASCADE,
                                 related_name="requester"
                                 )
     # not unique as many users may request
     book_author = models.CharField()
     book_title = models.CharField()
-    #allowing optional request reasons
+    # allowing optional request reasons
     request_content = models.TextField(blank=True)
-
 
     # metadata that sorts entries by requester
     class Meta:
@@ -91,4 +93,5 @@ class Request(models.Model):
 
     # Method to display Book objects as user friendly string
     def __str__(self):
-        return f"Request for: Title: {self.book_title} | Author: {self.book_author} | By: {self.requester}"
+        return f"Request for: Title: {self.book_title} | "
+        "Author: {self.book_author} | By: {self.requester}"

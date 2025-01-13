@@ -43,13 +43,6 @@ In order to fulfill the users wants from the Strategy plane and the plans from t
 I also created a Entity-Relationship Diagram to get a better idea of what I would need to construct to make the site function as required.<br>
 ![Image of an ERD for the site](README-Images/PP4-ERD.png)
 
-### Main Scripts
-
-
-
-#### Helper Scripts
-
-
 
 ## Skeleton
 
@@ -76,53 +69,117 @@ I wanted everything on the site to be presented cleanly.<br>
 
 ## Home
 The site initially loads a view of the Home page which contains the name of the library and a brief "About Us" description.<br>
-![Image of the Home page]()
+![Image of the Home page](README-Images/pp4-home-page.png)
 
 ## Books
 The site will display a list of books in the library's database and display them to the user. The user will be able to search and filter to find the books they want.<br>
-![Image of the Books List page]()
+![Image of the Books List page](README-Images/pp4-books-page.png)
 
 ### Request-Form
 The Books List page has a button to prompt a modal to fill a form to leave a request for a specific book to be added to the library.<br>
-![Image of the Request Modal page]()
+Currently Non-Functional.
 
 ## Book-Details
 The Books List contains more information about a book as well as shows any possible reviews the books may have been left by other users.<br>
-![Image of the Detailed Book view page]()
+![Image of the Detailed Book view page](README-Images/pp4-book-details-page.png)
 
 ### Reviews
 This is simply an area of the Book-Details page which contains both a form to submit a review of a book as well as pre-existing and approved reviews.<br>
 
-## Login-Form & Logout-Form
+## Signup & Login & Logout-Form
 These are simple forms to allow users to login or logout of the site.<br>
-![Images of the Signup, Login and Logout forms]()
+![Images of the Signup form](README-Images/pp4-register-page.png)
+![Images of the Login forms](README-Images/pp4-login-page.png)
+![Images of the Logout form](README-Images/pp4-signout-page.png)
 
 
 
 
 ## Features Left to Implement
 
-1. Placeholder.<br>
-    Placeholder.<br>
+1. Search Functionality.<br>
+    Could not figure out how to step through the data provided in the books.html due it using the Class view to display the entries.<br>
 
-2. Placeholder.<br>
-    Placeholder.<br>
+2. Request Functionality.<br>
+    Had difficulty getting the crispy forms to function correctly in a modal. COuld not get the context data to be correctly added to the view for use.<br>
+
+2. Checkout Functionality.<br>
+    Had difficulty correctly accessing the required data in order to decrement the required value.<br>
+    Forgot to add required attributes to the User class provided by the django.auth packages meaning I was unable to effectively add fields to hold any books held by a user.<br>
 
 # Testing
 
 
 |TEST|PROCESS|EXPECTATION|RESULT|
-|--|--|--|--|
-| Placeholder | Placeholder | Placeholder | Placeholder |
+| -- | -- | -- | -- |
+| Can an admin manually add new Database entries? | Using admin view to add new entries | The new entry should be added to the relevant table | SUCCESS |
+| Do urls dynamically update to show various database entries? | Clicking into each book to view the url | The url would append an appropriate slug | SUCCESS |
+| Can a user register? | Clicking to register | Be brought to the signup page | SUCCESS |
+| Can a user register? | Clicking to register | Complete signup process | SUCCESS |
+| Can a user login? | Clicking to login | Be brought to the login page | SUCCESS |
+| Can a user login? | Clicking to login | Complete login process | SUCCESS |
+| Can a user logout? | Clicking to logout | Be brought to the logout page | SUCCESS |
+| Can a user logout? | Clicking to logout | Complete logout process | SUCCESS |
+| Can a review be left on a book | Using the Form on the book-details page to leave a review | A review would be left | SUCCESS |
+| Will a review be marked as in need of moderation by default? | Using the Form on the book-details page to leave a review | A review would require approval to be fully displayed | SUCCESS |
+| Can a review be edited? | Using the button beneath a review to edit an existing review | The content of the review would be able to be altered | SUCCESS |
+| Can only the original reviewer edit a review | Using the button beneath a review to edit an existing review | The review would not be able to be changed by other users | SUCCESS |
+| Can a review be deleted? | Using the button beneath a review to delete an existing review | The review would prompt confirmation and be deleted if confirmed | SUCCESS|
+| Can only the original reviewer delete  a review| Using the button beneath a review to delete an existing review | The review would not be able to be deleted | SUCCESS|
+| Can an admin approve comments | Using the admin view to approve a comment | The comment should have its status updated to approved | SUCCESS |
+| Can a user request a new book? | Clicking request a book button | Modal pop up displays with form for request submission | FAILED |
+| Can a user search the database? | Entering search terms in the search bar | Relevant entries should display | FAILED |
+| Can a user mark a book for reserve? | Clicking the reserve button on a book-details page | The book should be added to user's reserved books | FAILED |
+| Can a user mark a book for reserve? | Clicking the reserve button on a book-details page | The books available should decrement | FAILED |
+| Can a user mark a book for reserve? | Clicking the reserve button on a book-details page | The button should be disable for users with the book in reserve | FAILED |
+| Does the reserve button update for users who have already reserved? | Clicking the reserve button changes it to a Return button | The button should dynamically swap | FAILED |
+| Does the reserve button update for users who have already reserved? | Clicking the reserve button increments available books | The books available should increment | FAILED |
+| Can a user unmark a book for reserve? | Clicking the return button on a book-details page | The book should be removed from user's reserved books | FAILED |
+| Does the reserve button become disabled if there are no available books? | Trying to click the reserve button when the available books is less than 1 | The button should be disabled | SUCCESS |
+
 
 
 # Validating
 
-Placeholder for code validation. HTML, CSS, JS, Python
+All functional code has been run through various linters and validators to ensure it is compliant with current web standards.
 
-## Placeholder
-The run.py file was fully checked in the CI Python Linter and returned no errors.<br>
-![Placeholder]()
+## Python
+The books/admin.py file was fully checked in the CI Python Linter and returned no errors.<br>
+![books/admin.py validation](README-Images/books-admin-validation.png)<br>
+The books/forms.py file was fully checked in the CI Python Linter and returned no errors.<br>
+![books/forms.py validation](README-Images/books-forms-validation.png)<br>
+The books/models.py file was fully checked in the CI Python Linter and returned no errors.<br>
+![books/models.py validation](README-Images/books-models-validation.png)<br>
+The books/urls.py file was fully checked in the CI Python Linter and returned no errors.<br>
+![books/urls.py validation](README-Images/books-urls-validation.png)<br>
+The books/views.py file was fully checked in the CI Python Linter and returned no errors.<br>
+![ooks/views.py validation](README-Images/books-views-validation.png)<br>
+The pp4codelibrary/admin.py file was fully checked in the CI Python Linter and returned no errors.<br>
+![pp4codelibrary/admin.py validation](README-Images/pp4-urls-validation.png)<br>
+
+## HTML
+The Home page was fully HTML Valid.<br>
+![Home Page Validation](README-Images/pp4-home-page-validation.png)<br>
+The Books page was fully HTML Valid.<br>
+![Books Page Validation](README-Images/pp4-books-page-validation.png)<br>
+The Book Details page was fully HTML Valid.<br>
+![Book Details Page Validation](README-Images/pp4-book-detail-page-validation.png)<br>
+The Signup page was not fully Valid but appears to be throwing errors from the auth package templates rather than the signup page itself.<br>
+![Signup Page Validation](README-Images/pp4-book-signup-validation.png)<br>
+The Login page was fully HTML Valid.<br>
+![Login Page Validation](README-Images/pp4-books-page-validation.png)<br>
+The Logout page was fully HTML Valid.<br>
+![Logout Page Validation](README-Images/pp4-books-page-validation.png)<br>
+
+## CSS
+![CSS Validation](README-Images/pp4-css-validation.png)
+
+## JavaScript
+The reviews.js script validation.<br>
+![Review Validation](README-Images/review-jshint.png)<br>
+The request.js script validation.<br>
+![Request Validation](README-Images/request-jshint.png)<br>
+The reserve.js script is currently non functional and commented out to prevent any issues.<br>
 
 # Bugs
 
@@ -215,6 +272,4 @@ In order to host uploaded images:
 6. I load the static directory to allow pages to access the images.
 
 # Credits
-
-## Content
-Placeholder:<br>
+The project was largely built upon the foundation laid by the Django Blog lessons provided by CodeInstitute.
