@@ -203,6 +203,16 @@ In order to allow users to register and login to the site:
 9. I migrated the changes.
 10. I included an "accounts" url path in the urls.py file.
 
+# Creating a secondary host for images
+
+In order to host uploaded images:
+
+1. I install the cloudinary package to utilise the API and add it to requirements.txt.
+2. In the env.py file I added the cloudinary url I generated for my account.
+3. I add cloudinary to the INSTALLED_APPS list.
+4. I import the package to the books/models file.
+5. I migrate changes made to the models to allow for images.
+6. I load the static directory to allow pages to access the images.
 
 # Credits
 

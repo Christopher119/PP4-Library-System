@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # constant to determine whether there are any remaining books to be reserved by users
 STATUS = ((0, "Unavailable"), (1, "Available"))
@@ -24,6 +25,7 @@ class Book(models.Model):
     description = models.TextField(unique=True)
     # number available for check out
     copies_available = models.IntegerField()
+    cover = CloudinaryField('image', default='placeholder')
 
     # attribute to set books as available by default
     status = models.IntegerField(choices=STATUS, default=1)

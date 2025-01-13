@@ -10,7 +10,18 @@ from .forms import ReviewForm
 class BookList(generic.ListView):
     queryset = Book.objects.all()
     template_name = "books/index1.html"
-    paginate_by = 6
+    paginate_by = 9
+
+# def book_list(request):
+#    model = Book
+#    search_request = ""
+#    if request.GET.get("searchbar"):
+#        search_request = request.GET.get("searchbar")
+#    
+#    books = Book.objects.filter(title__icontains = search_request)
+#    context = {"books": books}
+#    paginate_by = 6
+#    return render(request, 'books/index1.html')
 
 def home(request): 
     return render(request, "books/index.html") 

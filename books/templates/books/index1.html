@@ -1,52 +1,64 @@
-<!--PLACEHOLDER HTML FROM DJANGO BLOG LESSON-->
-
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
+<div class="container">
+    <!-- Search Bar and Request Book Button -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8 col-lg-6">
+            <form class="d-flex" action="#" method="get">
+                <input type="text" id="searchbar" name="searchbar" class="form-control" placeholder="Search for books..." />
+                <button type="submit" class="btn btn-primary ms-2"><i class="fa fa-search"></i> Search</button>
+            </form>
+        </div>
+    </div>
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+    <div class="row">
+        <!-- Book Entries Column -->
+        <div class="col-12">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
                 {% for book in book_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ book.author }}</p>
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded-lg">
+                        <div class="card-body p-4">
+                            <div class="image-container mb-3 position-relative">
+                                {% if "placeholder" in book.cover.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                                {% else %}
+                                <img class="card-img-top" src="{{ book.cover.url }}" alt="{{ book.title }}" />
+                                {% endif %}
+                                <div class="image-flash position-absolute bottom-0 start-0 p-3">
+                                    <p class="author text-white m-0">{{ book.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'book_detail' book.slug %}" class="post-link">
-                                <h2 class="card-title">{{ book.title }}</h2>
+                                <h5 class="card-title text-dark">{{ book.title }}</h5>
                             </a>
-
-                            <hr />
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
             </div>
         </div>
     </div>
+
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" class="mt-4">
         <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Prev</a></li>
+            {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>
     {% endif %}
 </div>
-
 <!-- index.html content ends here -->
 {% endblock %}

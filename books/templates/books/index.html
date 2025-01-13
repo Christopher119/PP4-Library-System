@@ -1,11 +1,49 @@
-<!--PLACEHOLDER HTML FROM DJANGO BLOG LESSON-->
-
 {% extends "base.html" %}
-
+{% url 'account_signup' as signup_url %}
 {% block content %}
 
 <!-- index.html content starts here -->
-<h1>Home Page</h1>
+<div class="container my-5">
+    <!-- Page Title -->
+    <h1 class="text-center mb-4">Welcome to Coder's Library</h1>
+    <p class="lead text-center mb-5">A place for developers, enthusiasts, and coders to explore books on programming, technology, and more!</p>
+    <!-- Search Bar Section -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8 col-lg-6">
+            <form class="d-flex" action="#" method="get">
+                <input type="text" id="searchbar" name="searchbar" class="form-control" placeholder="Search for books..." />
+                <button type="submit" class="btn btn-primary ms-2"><i class="fa fa-search"></i> Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Us Section-->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8 col-lg-6 text-center">
+            <h2>About Us</h2>
+            <p class="lead">
+                Coder's Library is a community-driven library based in Dublin, Ireland.  
+            </p>
+            <p>
+                Our mission is to provide access to a wide variety of books focusing on technology, programming, and computer science. Whether you're a beginner learning the basics or an experienced developer looking for advanced topics, we have something for everyone.
+            </p>
+            <p>
+                We believe that coding isn't just about writing lines of code; it's about understanding the principles and concepts that drive innovation. Join us in exploring the world of programming through the vast collection of books curated here at Coder's Library.
+            </p>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-lg-6 text-center">
+            <h3>Join Coder's Library Today!</h3>
+            <p>Sign up to access thousands of coding books and improve your programming skills. Whether you are a beginner or an expert, Coder's Library has something for everyone!</p>
+            {% if not user.is_authenticated %}
+            <a class="btn btn-primary btn-lg {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Sign Up Now</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 <!-- index.html content ends here -->
 {% endblock %}
